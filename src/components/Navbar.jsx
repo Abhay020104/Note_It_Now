@@ -4,7 +4,6 @@ import { auth } from '../firebase'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { logout } from '../services/authService'
-import logo from '../assets/logo.png'
 
 
 const NavbarComponent = () => {
@@ -29,7 +28,7 @@ const NavbarComponent = () => {
         <>
             <nav className="flex w-full justify-between items-center bg-purple-100 shadow-md py-3 px-10">
                 <div className="flex gap-1 justify-center items-center cursor-pointer">
-                    <img src={logo} alt="logo" className="w-6 h-6" />
+                    <img src="/logo.png" alt="logo" className="w-6 h-6" />
                     <p className="text-lg font-semibold text-purple-500 hover:text-purple-700 transition ease-in-out">
                         NIN 
                     </p>
