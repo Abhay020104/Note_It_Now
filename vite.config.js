@@ -8,6 +8,4 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-
-  root: 'C:\\Users\\abhay\\OneDrive\\Desktop\\NIN\\dist\\assets', 
 })
