@@ -7,10 +7,12 @@ import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 const LoginPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
 
     const handleEmailLogin = async (e) => {
@@ -72,13 +74,22 @@ const LoginPage = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         className='w-full p-2 bg-white rounded-md border' 
                         />
-                    <input 
-                        type='password' 
-                        placeholder='Password' 
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        className='w-full mb-3 p-2 bg-white rounded-md border' 
+                    <div className="relative w-full mb-3">
+                        <input 
+                            type={showPassword ? 'text' : 'password'} 
+                            placeholder='Password' 
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            className='w-full p-2 bg-white rounded-md border pr-10' 
                         />
+                        <button 
+                            type="button" 
+                            onClick={() => setShowPassword(!showPassword)} 
+                            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                        >
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                        </button>
+                    </div>
                 <button type='submit' className='bg-purple-600 text-white p-2 rounded-md hover:bg-purple-700 transition'>Login</button>
                 </form>
 
