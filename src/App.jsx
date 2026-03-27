@@ -1,9 +1,8 @@
 import { Toaster } from 'react-hot-toast'
 import HomePage from './pages/HomePage'
-import { Route, Routes } from 'react-router'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
 import { getCurrentUser } from './services/authService'
-import { Navigate } from 'react-router-dom'
 
 
 function App() {
